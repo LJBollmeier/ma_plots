@@ -1,0 +1,24 @@
+---Profiling---
+Time of Arrival,Identifier
+1707989763440,Activated profiling
+1707989763463,Activated profiling
+1707989765639,Activated profiling
+1707989765662,Activated profiling
+1707989767874,Activated profiling
+1707989767897,Activated profiling
+1707989770494,Activated profiling
+1707989770517,Activated profiling
+1707989772793,Activated profiling
+1707989772816,Activated profiling
+1707989775085,Activated profiling
+1707989775108,Activated profiling
+1707989777349,Activated profiling
+1707989777372,Activated profiling
+1707989779840,Activated profiling
+1707989779863,Activated profiling
+1707989782017,Activated profiling
+1707989782040,Activated profiling
+1707989784380,Activated profiling
+1707989784403,Activated profiling
+Identifier,MinTime,MaxTime,AvgTime,90Pct
+Activated profiling,1707989763440.000000,1707989784403.000000,1707989773902.600098,1707989784380.000000

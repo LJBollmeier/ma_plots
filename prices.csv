@@ -1,0 +1,19 @@
+instance type,spot,on demand
+c6i_large,0.036,0.085
+c6i_xlarge,0.0799,0.17
+c6i_2xlarge,0.153,0.34
+c6i_4xlarge,0.31,0.68
+c6i_8xlarge,0.6265,1.36
+c6i_12xlarge,0.8538,2.04
+c6i_16xlarge,1.1628,2.72
+c6i_24xlarge,1.6142,4.08
+c6i_32xlarge,1.9723,5.44
+c6in_large,0.0474,0.1134
+c6in_xlarge,0.0978,0.2268
+c6in_2xlarge,0.1923,0.4536
+c6in_4xlarge,0.3713,0.9072
+c6in_8xlarge,0.7714,1.8144
+c6in_12xlarge,1.2106,2.7216
+c6in_16xlarge,1.6265,3.6288
+c6in_24xlarge,2.1112,5.4432
+c6in_32xlarge,2.9436,7.2576
