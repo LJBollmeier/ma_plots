@@ -4,7 +4,7 @@ import csv
 
 data = {}
 
-with open('latency_results_full.csv') as csvfile:
+with open('multiple_queries/latency_results_full.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=',', quotechar='|')
     #next(reader, None)
     for row in reader:

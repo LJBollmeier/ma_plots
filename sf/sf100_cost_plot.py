@@ -27,7 +27,7 @@ print(ax.get_lines())
 
 ax.legend()
 ax.set_xticklabels(tick_labels)
-ax.set_xlabel("Instance type")
+ax.set_xlabel("Compute Resource")
 ax.set_ylabel('Cost USD')
 ax.set_title('TPC-H SF100, 100 vCPUs')
 

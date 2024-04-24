@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 from matplotlib import colormaps
 from matplotlib.colors import to_rgba
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 
 cmap = plt.get_cmap("Set2")
 latency = []
@@ -60,7 +63,7 @@ plt.savefig('he_tpch_cost_once', dpi=300)
 
 
 fig, ax = plt.subplots()
-labels = ["serverless", "1 instance", "2 instances", "3 instances"]
+labels = ["serverless", "1 virtual server", "2 virtual servers", "3 virtual servers"]
 for i in range(0,4):
     max_queries_per_minute = 60000/df["average execution time"][i]
     if i == 0:
@@ -83,10 +86,10 @@ ax.legend(loc = "lower left", bbox_to_anchor=(1.0,0.0))
 
 #ax.set_xticklabels(tick_labels)
 ax.set_xlabel("Queries per minute")
-ax.set_ylabel('Cost per Query (USD)')
+ax.set_ylabel('Cost per query (USD)')
 #ax.set_title('TPC-H SF10')
 fig.set_figheight(3)
-fig.set_figwidth(5)
+fig.set_figwidth(6)
 fig.tight_layout()
 plt.savefig('he_tpch_cost_once', dpi=300)
 plt.show()

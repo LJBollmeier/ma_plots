@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 from matplotlib import colormaps
 from matplotlib.colors import to_rgba
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 
 cmap = plt.get_cmap("Set2")
 labels = []
@@ -24,13 +27,13 @@ ax.bar(labels[3:4], latency[3:4], color = cmap(2), label = "virtual server execu
 
 print(ax.get_lines())
 
-ax.legend(loc = "lower right")
+ax.legend(loc = "upper left", bbox_to_anchor=(1.0, 1.0))
 #ax.set_xticklabels(tick_labels)
-ax.set_xlabel("Instance count")
-ax.set_ylabel('Execution Time (ms)')
+ax.set_xlabel("Virtual server count")
+ax.set_ylabel('Execution time (ms)')
 #ax.set_title('TPC-H SF10')
 fig.set_figheight(3)
-fig.set_figwidth(4)
+fig.set_figwidth(6)
 fig.tight_layout()
 plt.savefig('he_tpch_latency', dpi=300)
 plt.show()

@@ -13,7 +13,7 @@ latency = df["average execution time"]
 
 # Plotting
 fig, ax = plt.subplots()
-colors = [cmap(0)] + 7 * [cmap(1)] + 7 * [cmap(2)]
+colors = [cmap(0), cmap(0)] + 7 * [cmap(1)] + 7 * [cmap(2)]
 
 ax.bar(labels[0:1], latency[0:1], color = cmap(0), label= "serverless")
 ax.bar(labels[1:8], latency[1:8], color = cmap(1), label = "compute instances")

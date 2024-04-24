@@ -1,0 +1,5 @@
+type,rep,min,max,avg,median
+Create,20,21387,76079,27292,24124 
+Start,20,11246,83649,20466.3,12543
+serverless,20,114,409,177,290
+serverless_warmup,20,5,8,6,6

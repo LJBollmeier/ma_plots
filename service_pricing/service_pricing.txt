@@ -1,0 +1,16 @@
+S3
+Write-Requests
+0.000005 USD
+Read-Requests
+0.0000004 USD
+0.021 USD/GB/Month
+
+SQS
+0.0000004 USD
+
+Dynamodb
+Read
+0.00000125
+Write
+0.00000025
+Storage 0.25$/GB/month

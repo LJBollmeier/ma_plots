@@ -3,6 +3,9 @@ import matplotlib.pyplot as plot
 import os
 import regex as re
 import sys
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 
 base_dirs = ["trace_compare/c6i_8xlarge_sf100_instances4_repetitions10_new/", "trace_compare/c6in_large_sf100_instances50_repetitions10/"]
 instances = [os.listdir(dir)[0] for dir in base_dirs]
@@ -58,10 +61,10 @@ for nt, ct, worker_dir, xmin, xmax in zip(network_traces, cpu_traces, worker_dir
     ax[plot_index].plot(df["Time"], df["Kernel"], color = cmap(2), label="Kernel")
     
     ax[plot_index].set_xlabel("Time (s)")
-    ax[plot_index].set_ylabel("CPU Usage")
+    ax[plot_index].set_ylabel("CPU usage")
     #ax[plot_index].set_title("c6i_large cpu usage")
     ax[plot_index].set_xlim(0,xmax-xmin)
-    ax[plot_index].legend()
+    ax[plot_index].legend(loc = "upper right", bbox_to_anchor=(0.2,1.6))
     plot_index += 1
 
     with open(nt) as fd:
@@ -122,6 +125,7 @@ for nt, ct, worker_dir, xmin, xmax in zip(network_traces, cpu_traces, worker_dir
     # break
 #plot.plot(df["Time"], df["BytesReceived"], color = color)
 #plot.plot(df["Time"], df["BytesSend"], color = color)
+ax[1].set_ylim(0, 1700)
 fig.set_figheight(5)
 fig.set_figwidth(4)
 fig.tight_layout()

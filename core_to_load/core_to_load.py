@@ -2,13 +2,16 @@ import matplotlib.pyplot as plot
 import random as rnd
 import math
 import statistics
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 rnd.seed(1337)
 
 duration = 15 * 60 * 1000
 max_cores = 50
 query_length = 2000
 required_cores_per_query = 10
-warmup_duration = 3 * 60 * 1000
+warmup_duration =  3 * 60 * 1000
 
 times = list(range(0,duration + 1))
 values = [0] * len(times)
@@ -18,11 +21,11 @@ sustained_load_count = 3
 part_length = int(duration/sustained_load_count)
 for i in range(0, sustained_load_count):
     load = 0.0
-    if i == 0:
+    if i == 2:
         load = 0.5 * max_cores
     if i == 1 :
         load = 0
-    if i == 2:
+    if i == 0:
         load = max_cores
 
     for j in range(part_length * i, part_length * (i+1)):
@@ -55,7 +58,7 @@ for i in range(0, len(values)):
 avg_value = statistics.mean(values)
 print("average:", avg_value)
 times = times + list(range(len(times), len(times) + warmup_duration))
-values = [avg_value] * warmup_duration + values
+values = [max_cores] * warmup_duration + values
 
 # step four: generate query stream
     #cut everything in parts of query length and get average of a slice.
@@ -110,11 +113,21 @@ json_string += ']}'
 
 fd = open("tpch_stream.json", "w")
 fd.write(json_string)
-
+xmin = 180
+times = [t / 1000 - xmin for t in times]
+plot.figure(figsize=(6,2))
 plot.plot(times, values)
-plot.plot(qt, qv)
+plot.xlim(0,900)
+plot.xlabel("Time (s)")
+plot.ylabel("Cores used")
+plot.tight_layout()
 
-plot.set_xlabel = "Time (s)"
-plot.set_ylabel = "Cores used"
-#plot.xlim(50000,260000)
+#plot.legend()
+plot.savefig('stream_workload', dpi=300, bbox_inches="tight")
 plot.show()
+
+plot.clf()
+#plot.plot(qt, qv)
+
+
+#plot.xlim(50000,260000)

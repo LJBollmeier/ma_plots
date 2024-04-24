@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 from matplotlib import colormaps
 from matplotlib.colors import to_rgba
+from matplotlib import rc
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 
 cmap = plt.get_cmap("Set2")
 latency = []
@@ -31,7 +34,7 @@ instance_cost = cost_spot #df["instance cost"]
 request_cost = df["request cost"]
 bottom = np.zeros(len(worker_cost))
 all_costs = [request_cost, coordinator_cost, worker_cost, cost_spot]
-labels = ["request", "coordinator", "serverless", "instance"]
+labels = ["request cost", "coordinator cost", "serverless function cost", "virtual server cost"]
 
 fig, ax = plt.subplots()
 for cost,i in zip(all_costs, range(0, len(all_costs))):
@@ -48,12 +51,12 @@ print(ax.get_lines())
 #ax.legend(loc = "lower right")
 ax.legend(loc='upper left', bbox_to_anchor=(1, 0.5))
 #ax.set_xticklabels(tick_labels)
-ax.set_xlabel("Instance count")
-ax.set_ylabel('Cost per Query (USD)')
+ax.set_xlabel("Virtual server count")
+ax.set_ylabel('Cost per query (USD)')
 ax.set_ylim(0,0.00055)
 #ax.set_title('TPC-H SF10')
 fig.set_figheight(3)
-fig.set_figwidth(5)
+fig.set_figwidth(6)
 fig.tight_layout()
 plt.savefig('he_tpch_cost', dpi=300)
 plt.show()

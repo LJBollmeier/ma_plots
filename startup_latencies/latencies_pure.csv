@@ -1,0 +1,7 @@
+type,cold(avg),cold(90th percentile),warm(avg),warm(90th percentile
+serverless,468,928,6,7
+c6i.large,15207,16585,11022,12029
+c6i.xlarge,15526,16674,11053,11930
+c6i.2xlarge,16009,19806,11298,12875
+c6i.4xlarge,17156,20745,14615,17626
+c6i.8xlarge,20135,22445,16253,17702
